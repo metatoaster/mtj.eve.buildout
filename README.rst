@@ -60,7 +60,7 @@ Before any tests that depends on the eve datadumps (i.e. anything that
 uses mtj.evedb) a suitable static data dump must be provided.  This can
 be done by setting the environment variable ``MTJ_EVEDB_SRC`` to a valid
 data source that can be used by sqlalchemy.  I prefer the sqlite data
-dumps provided at http://zofu.no-ip.de/; just download the latest
+dumps provided at http://pozniak.pl/dbdump/; just download the latest
 version and place it somewhere on your drive.  Then set the variable
 with something like this::
 
