@@ -57,14 +57,13 @@ Which will then generate the buildout script.  Run that like so::
     Generated script '/home/buildout/mtj.eve.buildout/bin/test'.
 
 Before any tests that depends on the eve datadumps (i.e. anything that
-uses mtj.evedb) a suitable static data dump must be provided.  This can
-be done by setting the environment variable ``MTJ_EVEDB_SRC`` to a valid
-data source that can be used by sqlalchemy.  I prefer the sqlite data
-dumps provided at http://pozniak.pl/dbdump/; just download the latest
-version and place it somewhere on your drive.  Then set the variable
-with something like this::
-
-    $ export MTJ_EVEDB_SRC=sqlite:////home/buildout/mtj.eve.buildout/eve-ret107.sqlite
+uses mtj.evedb) a suitable static data dump must be provided.  For
+testing purposes, a limited subset of what CCP released is provided
+within the mtj.evedb test module.  It is built on top of the sqlite data
+dumps provided at http://pozniak.pl/dbdump/.  For production usage, just
+download the latest version and place it somewhere on your drive and
+make the appropriate initialization calls.  Please refer to the
+documentations and tests provided by the mtj.evedb package.
 
 Now run the evedb test like so::
 
