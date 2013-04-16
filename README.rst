@@ -2,7 +2,7 @@ Introduction
 ============
 
 This is the buildout for setting up the development environment for MTJ
-EVE Online tools.
+EVE Online tools and application.
 
 Requirements
 ------------
@@ -95,3 +95,15 @@ the interactive shell::
     >>> server.server_status()
     {'players': 30942, 'online': True}
 
+Lastly, a development flask application can be spawned like so::
+
+    $ bin/python src/mtj.eve.tracker/mtj/eve/tracker/ctrl.py \
+    >     -c tracker.config.json
+
+Where the configuration file can be generated like this::
+
+    $ bin/python src/mtj.eve.tracker/mtj/eve/tracker/ctrl.py
+    mtj.tracker.ctrl> write_config tracker.config.json
+    mtj.tracker.ctrl>
+
+Edit the fields to what is required.
