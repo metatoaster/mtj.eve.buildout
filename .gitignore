@@ -3,5 +3,6 @@ develop-eggs/
 eggs/
 parts/
 src/
+mtjctrl
 .*.swp
 .*.cfg

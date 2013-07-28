@@ -1,0 +1,24 @@
+#!/path/to/python
+"""
+This is an example script that can be modified to allow the startup and
+shutdown of the full tracker instance without specifying the location of
+the configuration every time, allowing compatibility with init.d start/
+stop scripts.
+
+To make use of this, one can modify the above path to python to be the
+full path to the buildout generated python, and then modify the location
+of the config file, and then save the result as a copy into the path
+where the system init.d scripts are located.  This process can be
+replaced by a buildout recipe, but given that virtualenv may be another
+platform I may come up with a better solution that address both of these
+foundations.
+"""
+
+import sys
+
+import mtj.flask.evetracker.ctrl
+
+if __name__ == '__main__':
+    sys.exit(mtj.flask.evetracker.ctrl.main(
+        ["-c", '/path/to/config.json']
+        + sys.argv[1:]))
