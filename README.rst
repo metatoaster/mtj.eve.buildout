@@ -107,3 +107,20 @@ Where the configuration file can be generated like this::
     mtj.tracker.ctrl>
 
 Edit the fields to what is required.
+
+Upgrades and Migration
+----------------------
+
+As this suite of software and all related packages are currently under
+development, sometimes there will be changes that are incompatible with
+existing data.  The following documents some of thes changes.
+
+Migration to ``mtj.flask.acl``
+
+    The access control layer was migrated to its own package, but a
+    table has been renamed.  The ``group_permit`` table has been renamed
+    to ``group_role`` to have consistent naming with libraries that are
+    being used.  To migrate data over, you may execute the following SQL
+    statement in your SQL shell::
+
+        INSERT INTO group_role SELECT * FROM group_permit;
