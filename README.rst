@@ -124,3 +124,17 @@ Migration to ``mtj.flask.acl``
     statement in your SQL shell::
 
         INSERT INTO group_role SELECT * FROM group_permit;
+
+API usage tracking changes.
+
+    Due to the flakiness of EVE API, exceptions are no longer hard fail
+    but has the option to retry, which for towers the number of previous
+    sequential failures is tracked in a new field.  This needs to be
+    added manually::
+
+        ALTER TABLE tower_api ADD COLUMN api_error_count;
+
+Configuration changes.
+
+    Note that implementations to be used are specified as full class
+    paths.
